@@ -6,7 +6,7 @@
 
 const CONTACT = {
   email:    'info@charterboatmiami.net',
-  marina:   'Miami Beach Marina, 300 Alton Rd, Miami Beach, FL',
+  marina:   'Departing Miami Beach \u00b7 exact dock confirmed on booking',
   // Optional: paste a form endpoint (e.g. https://formspree.io/f/xxxxxxx)
   // to receive enquiries by email. Leave empty to fall back to the
   // visitor's own mail client.
