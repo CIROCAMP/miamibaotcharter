@@ -1,14 +1,11 @@
 /* ============================================================
    Charter Boat Miami — interactions
-   Edit CONTACT below to change the phone / email / WhatsApp
-   everywhere on the site at once.
+   Edit CONTACT below to change the email or marina everywhere
+   on the site at once.
    ============================================================ */
 
 const CONTACT = {
-  phone:    '+1 (305) 000-0000',           // display format
-  phoneRaw: '+13050000000',                // tel: link
-  whatsapp: '13050000000',                 // digits only, no + or spaces
-  email:    'hello@charterboatmiami.net',
+  email:    'info@charterboatmiami.net',
   marina:   'Miami Beach Marina, 300 Alton Rd, Miami Beach, FL',
   // Optional: paste a form endpoint (e.g. https://formspree.io/f/xxxxxxx)
   // to receive enquiries by email. Leave empty to fall back to the
@@ -20,10 +17,7 @@ const CONTACT = {
 (function applyContact() {
   document.querySelectorAll('[data-contact]').forEach((el) => {
     const kind = el.dataset.contact;
-    if (kind === 'phone') {
-      el.textContent = CONTACT.phone;
-      if (el.tagName === 'A') el.href = 'tel:' + CONTACT.phoneRaw;
-    } else if (kind === 'email') {
+    if (kind === 'email') {
       el.textContent = CONTACT.email;
       if (el.tagName === 'A') el.href = 'mailto:' + CONTACT.email;
     } else if (kind === 'marina') {
@@ -127,7 +121,7 @@ function readForm() {
   const d = Object.fromEntries(new FormData(form).entries());
   return {
     name: (d.name || '').trim(),
-    phone: (d.phone || '').trim(),
+    phone: (d.phone || '').trim() || 'not given',
     email: (d.email || '').trim(),
     date: d.date || 'flexible',
     guests: d.guests || 'not specified',
@@ -155,20 +149,12 @@ function setStatus(text, kind) {
   status.className = 'form-status' + (kind ? ' ' + kind : '');
 }
 
-/* WhatsApp button — always reflects whatever is typed so far */
-function refreshWhatsApp() {
-  const body = composeMessage(readForm());
-  waBtn.href = 'https://wa.me/' + CONTACT.whatsapp + '?text=' + encodeURIComponent(body);
-}
-form.addEventListener('input', refreshWhatsApp);
-refreshWhatsApp();
-
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   if (!form.checkValidity()) {
     form.reportValidity();
-    setStatus('Please fill in your name, phone and email.', 'err');
+    setStatus('Please fill in your name and email.', 'err');
     return;
   }
 
@@ -186,10 +172,9 @@ form.addEventListener('submit', async (e) => {
       });
       if (!res.ok) throw new Error('Request failed: ' + res.status);
       form.reset();
-      refreshWhatsApp();
       setStatus('Thank you — your request is in. We usually reply within a couple of hours.', 'ok');
     } catch (err) {
-      setStatus('That did not go through. Please call ' + CONTACT.phone + ' or email ' + CONTACT.email + '.', 'err');
+      setStatus('That did not go through. Please email ' + CONTACT.email + ' directly.', 'err');
     } finally {
       submitBtn.disabled = false;
     }

@@ -313,7 +313,7 @@ p{margin:0 0 1em}
 .field select option{background:var(--navy-700);color:var(--text)}
 .field input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(.75);cursor:pointer}
 
-.form-actions{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.4rem}
+.form-actions{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:.4rem}
 .form-status{margin:0;font-size:.9rem;min-height:1.2em}
 .form-status.ok{color:var(--aqua)}
 .form-status.err{color:#e9967a}
@@ -390,7 +390,7 @@ p{margin:0 0 1em}
   .nav-toggle{display:flex;z-index:2}
   .feature-cards,.dest-grid{grid-template-columns:1fr}
   .hero-inner{padding:7.5rem 0 5rem}
-  .row,.form-actions{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr}
   .cta-inner{flex-direction:column;align-items:flex-start}
 }
@@ -411,4 +411,8 @@ p{margin:0 0 1em}
 @media print{
   .site-header,.scroll-hint,.marquee,.book-form,.cta-strip{display:none}
   body{background:#fff;color:#111}
+}
+
+.field>span .opt{
+  color:var(--muted-dim);letter-spacing:.12em;font-size:.9em;text-transform:none;margin-left:.35rem;
 }
