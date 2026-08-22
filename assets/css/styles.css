@@ -137,15 +137,15 @@ p{margin:0 0 1em}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;isolation:isolate;overflow:hidden}
 .hero-media{
   position:absolute;inset:0;z-index:-2;
-  background:url('../img/hero.svg') center/cover no-repeat,linear-gradient(160deg,#0a2740,#04101c);
+  background:url('../img/hero.jpg') center 42%/cover no-repeat,linear-gradient(160deg,#0a2740,#04101c);
   animation:heroDrift 28s ease-in-out infinite alternate;
 }
 @keyframes heroDrift{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(-1.5%,-1%,0)}}
 .hero-scrim{
   position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(115% 85% at 10% 84%,rgba(4,14,24,.88),transparent 60%),
-    linear-gradient(to top,rgba(4,14,24,.94) 2%,rgba(4,14,24,.22) 46%,rgba(4,14,24,.58) 100%);
+    radial-gradient(120% 88% at 8% 82%,rgba(4,14,24,.92),transparent 62%),
+    linear-gradient(to top,rgba(4,14,24,.96) 2%,rgba(4,14,24,.42) 48%,rgba(4,14,24,.66) 100%);
 }
 .hero-inner{padding:9rem 0 6rem;max-width:900px}
 .hero h1{margin-bottom:1.4rem;text-shadow:0 2px 40px rgba(0,0,0,.5)}
@@ -416,3 +416,21 @@ p{margin:0 0 1em}
 .field>span .opt{
   color:var(--muted-dim);letter-spacing:.12em;font-size:.9em;text-transform:none;margin-left:.35rem;
 }
+
+/* ---------------- general arrangement ----------------
+   A technical drawing on its own light ground, deliberately set against the
+   dark page: it reads as a spec sheet rather than another photograph. */
+.layout{
+  margin:clamp(2.4rem,5vw,3.6rem) 0 0;
+  border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#c2c6c7;
+}
+.layout img{width:100%;height:auto;display:block}
+.layout figcaption{
+  background:var(--navy-800);border-top:1px solid var(--line);
+  padding:1.1rem clamp(1.2rem,2.4vw,1.8rem);
+  color:var(--muted);font-size:.9rem;line-height:1.6;
+}
+.layout figcaption strong{color:var(--text);font-weight:500}
+
+/* photographs, unlike the old flat artwork, need a neutral ground while they load */
+.yacht-photo,.gallery figure{background:var(--navy-700)}
