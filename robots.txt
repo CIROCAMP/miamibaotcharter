@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://charterboatmiami.net/sitemap.xml
+Sitemap: https://www.charterboatmiami.net/sitemap.xml
