@@ -452,3 +452,33 @@ p{margin:0 0 1em}
 .chef strong{color:var(--text);font-weight:500}
 .chef b{color:var(--accent-lite);font-weight:500;white-space:nowrap}
 .chef-star{color:var(--accent-lite);font-size:1rem;line-height:1.5;flex:none}
+
+/* ---------------- VIVA wordmark ----------------
+   The supplied logo is black glyphs on transparency. Painting it through a
+   mask lets it take currentColor, so one asset serves the coral header, the
+   muted footer and any future light background — no recoloured copies. */
+.brand-logo{
+  display:block;flex:none;background-color:currentColor;color:var(--accent-lite);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:left center;mask-position:left center;
+  -webkit-mask-size:contain;mask-size:contain;
+}
+/* Header: VIVA alone. The full lockup's letterspaced subline is set for large
+   reproduction — at header scale it degrades into a smudge, so the compact
+   mark is used instead and the full lockup gets room in the footer. */
+.brand-logo{
+  width:84px;height:24px;
+  -webkit-mask-image:url('../img/viva-mark.png');mask-image:url('../img/viva-mark.png');
+}
+.brand:hover .brand-logo{color:var(--text)}
+
+/* Footer: the complete lockup, large enough for COCONUT GROVE to read. */
+.brand-logo-full{
+  width:150px;height:51px;color:var(--muted);
+  -webkit-mask-image:url('../img/viva-wordmark.png');mask-image:url('../img/viva-wordmark.png');
+}
+
+@media (max-width:520px){
+  .brand-logo{width:70px;height:20px}
+  .brand-text strong{font-size:1.05rem}
+}
