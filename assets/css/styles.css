@@ -11,15 +11,13 @@
   --line:rgba(255,255,255,.10);
   --line-strong:rgba(255,255,255,.18);
 
-  --sand:#f4efe6;
   --text:#e8eef4;
   --muted:#9fb2c3;
   --muted-dim:#7c8fa1;
 
-  --accent:#ef8a68;        /* coral — the pressed, saturated end */
-  --accent-lite:#ffb9a2;   /* light pink-orange — the reading colour on dark ground */
-  --accent-ink:#2c110a;    /* warm near-black, for text sitting on the accent */
-  --aqua:#4fd1c5;
+  --accent:#2b7fb6;        /* blue — the pressed, saturated end */
+  --accent-lite:#8fd2f2;   /* azzurro — the reading colour on the dark ground */
+  --accent-ink:#04141f;    /* near-black, for text sitting on the accent */
 
   --wrap:1200px;
   --r-sm:10px;
@@ -80,8 +78,8 @@ p{margin:0 0 1em}
   transition:transform .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);
 }
 .btn:hover{transform:translateY(-2px)}
-.btn-gold{--btn-bg:linear-gradient(135deg,var(--accent-lite),var(--accent));--btn-fg:var(--accent-ink);--btn-bd:transparent;font-weight:600;box-shadow:0 12px 30px -12px rgba(239,138,104,.55)}
-.btn-gold:hover{box-shadow:0 18px 40px -14px rgba(239,138,104,.75)}
+.btn-gold{--btn-bg:linear-gradient(135deg,var(--accent-lite),var(--accent));--btn-fg:var(--accent-ink);--btn-bd:transparent;font-weight:600;box-shadow:0 12px 30px -12px rgba(43,127,182,.55)}
+.btn-gold:hover{box-shadow:0 18px 40px -14px rgba(43,127,182,.8)}
 .btn-outline{--btn-bd:var(--line-strong)}
 .btn-outline:hover{--btn-bg:rgba(255,255,255,.06);--btn-bd:var(--accent-lite);color:var(--accent-lite)}
 .btn-ghost{--btn-bd:rgba(255,255,255,.35);backdrop-filter:blur(6px)}
@@ -235,7 +233,7 @@ p{margin:0 0 1em}
   transition:transform .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease);
 }
 .card:hover{transform:translateY(-6px);border-color:var(--line-strong);box-shadow:var(--shadow)}
-.card-feature{border-color:rgba(255,185,162,.45);background:linear-gradient(170deg,#12233a,var(--navy-800))}
+.card-feature{border-color:rgba(143,210,242,.45);background:linear-gradient(170deg,#12233a,var(--navy-800))}
 .ribbon{
   position:absolute;top:1.3rem;right:1.3rem;
   background:linear-gradient(135deg,var(--accent-lite),var(--accent));color:var(--accent-ink);
@@ -257,8 +255,8 @@ p{margin:0 0 1em}
 .incl h3{font-family:var(--serif);font-size:1.45rem;font-weight:600;margin-bottom:1.1rem}
 .ticks{list-style:none;margin:0;padding:0;display:grid;gap:.55rem;color:var(--muted);font-size:.95rem}
 .ticks li{position:relative;padding-left:1.7rem}
-.ticks li:before{content:'✓';position:absolute;left:0;color:var(--aqua);font-size:.85rem}
-.ticks-alt li:before{content:'＋';color:var(--accent-lite)}
+.ticks li:before{content:'✓';position:absolute;left:0;color:var(--accent-lite);font-size:.85rem}
+.ticks-alt li:before{content:'＋';color:var(--muted-dim)}
 
 .fineprint{color:var(--muted-dim);font-size:.82rem;max-width:78ch;margin-top:2rem;line-height:1.65}
 
@@ -306,7 +304,7 @@ p{margin:0 0 1em}
 .field textarea{resize:vertical;min-height:110px}
 .field input::placeholder,.field textarea::placeholder{color:var(--muted-dim)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent-lite);background:rgba(255,255,255,.075)}
-.field input:user-invalid{border-color:#e07a5f}
+.field input:user-invalid{border-color:var(--accent-lite);background:rgba(143,210,242,.06)}
 .field select{appearance:none;cursor:pointer;
   background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
   background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;
@@ -316,8 +314,8 @@ p{margin:0 0 1em}
 
 .form-actions{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:.4rem}
 .form-status{margin:0;font-size:.9rem;min-height:1.2em}
-.form-status.ok{color:var(--aqua)}
-.form-status.err{color:#e9967a}
+.form-status.ok{color:var(--accent-lite)}
+.form-status.err{color:var(--text);font-weight:500}
 
 /* ---------------- faq ---------------- */
 .faq{display:grid;gap:0;border-top:1px solid var(--line)}
@@ -437,7 +435,7 @@ p{margin:0 0 1em}
 .yacht-photo,.gallery figure{background:var(--navy-700)}
 
 /* costs quoted on top of the charter rate — marked apart from the add-ons */
-.ticks-warn li:before{content:'!';color:var(--accent-lite);font-weight:600}
+.ticks-warn li:before{content:'!';color:var(--text);font-weight:600}
 .ticks-warn{margin-bottom:1.6rem}
 .ticks-warn strong{color:var(--text);font-weight:500}
 .incl-h2{margin-top:0;padding-top:1.4rem;border-top:1px solid var(--line)}
@@ -446,7 +444,7 @@ p{margin:0 0 1em}
 .chef{
   display:flex;gap:.9rem;align-items:flex-start;
   margin:0 0 1.3rem;padding:1rem 1.1rem;
-  background:rgba(255,185,162,.07);border:1px solid rgba(255,185,162,.28);
+  background:rgba(143,210,242,.07);border:1px solid rgba(143,210,242,.26);
   border-radius:var(--r);color:var(--muted);font-size:.94rem;line-height:1.6;
 }
 .chef strong{color:var(--text);font-weight:500}
@@ -458,7 +456,7 @@ p{margin:0 0 1em}
    mask lets it take currentColor, so one asset serves the coral header, the
    muted footer and any future light background — no recoloured copies. */
 .brand-logo{
-  display:block;flex:none;background-color:currentColor;color:var(--accent-lite);
+  display:block;flex:none;background-color:currentColor;color:var(--text);
   -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
   -webkit-mask-position:left center;mask-position:left center;
   -webkit-mask-size:contain;mask-size:contain;
@@ -470,7 +468,7 @@ p{margin:0 0 1em}
   width:84px;height:24px;
   -webkit-mask-image:url('../img/viva-mark.png');mask-image:url('../img/viva-mark.png');
 }
-.brand:hover .brand-logo{color:var(--text)}
+.brand:hover .brand-logo{color:var(--accent-lite)}
 
 /* Footer: the complete lockup, large enough for COCONUT GROVE to read. */
 .brand-logo-full{
