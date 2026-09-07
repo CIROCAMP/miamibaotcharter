@@ -136,7 +136,7 @@ p{margin:0 0 1em}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;isolation:isolate;overflow:hidden}
 .hero-media{
   position:absolute;inset:0;z-index:-2;
-  background:url('../img/hero.jpg') center 42%/cover no-repeat,linear-gradient(160deg,#0a2740,#04101c);
+  background:url('../img/hero.jpg?v=ed16e9ecc3') center 42%/cover no-repeat,linear-gradient(160deg,#0a2740,#04101c);
   animation:heroDrift 28s ease-in-out infinite alternate;
 }
 @keyframes heroDrift{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(-1.5%,-1%,0)}}
